@@ -11,9 +11,9 @@ Prettier, ESlint를 이용해 문법에 오류가 없도록 작업하며 코드�
 
 ## 완성작 보기
 
-- 미리보기 : DEMO(https://site2023-react.netlify.app/)
+- 미리보기 : DEMO(https://seoeun-reactsite.netlify.app/)
 - 작업 기간 : 3일
-- Vue 버전 : [ 소스코드 ](https://github.com/SeoeunCho/site2023-vue) / [DEMO](https://site2023-vue.netlify.app/)
+- Vue 버전 : [ 소스코드 ](https://github.com/SeoeunCho/site2023-vue) / [DEMO](https://seoeun-vuesite.netlify.app/)
 
 ## 학습
 
