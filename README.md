@@ -21,7 +21,7 @@ Prettier, ESlint를 이용해 문법에 오류가 없도록 작업하며 코드�
 - Virtual DOM : React는 가상 DOM(Virtual DOM)을 사용하여 효율적인 UI 업데이트를 수행합니다. 가상 DOM은 실제 DOM과 동기화되어 있으며, 상태 변화에 따른 최소한의 변경만을 적용하여 성능을 향상시킵니다.
 - JSX : 자바스크립트 확장 문법인 JSX를 사용하여 컴포넌트의 구조를 선언적으로 작성하고 UI와 관련된 로직을 더 직관적이고 가독성 있게 작성할 수 있습니다.
 - 생명주기 메서드 : React 컴포넌트는 생성, 갱신, 제거 등의 생명주기 메서드를 가지고 있습니다. 이를 활용하여 컴포넌트가 마운트되거나 갱신될 때 특정 동작을 수행할 수 있습니다.
-- 상태관리 : React Hooks의 `useState``useEffect``useRef` 를 사용하여 상태관리를 효율적으로 처리할 수 있습니다. Redux의 개선버전인 Redux-toolkit을 사용하여 
+- 상태관리 : React Hooks의 `useState``useEffect``useRef` 를 사용하여 상태관리를 효율적으로 처리할 수 있습니다.
 - 라우팅 기능 : React-Router-Dom을 사용하여 각 경로에 해당하는 컴포넌트를 렌더링하고 다른페이지로 이동하도록 SPA(Single Page Application)를 구축했습니다.
 - Swiper.js : JavaScript 라이브러리인 스와이퍼 슬라이드를 사용하여 반응형에 대응하고 제공된 Parameter를 적극 활용하여 이미지를 더욱 효과적으로 보여줍니다.
 
@@ -43,10 +43,6 @@ Prettier, ESlint를 이용해 문법에 오류가 없도록 작업하며 코드�
 
 - React를 설치합니다. `npx create-react-app {폴더명}`
 - Router를 설치합니다. `npm install react-router-dom`
-- Redux-toolkit을 설치합니다. `npm install @reduxjs/toolkit react-redux` 
-  - (*주의 : react, react-dom의 버전이 18.1.x이상이어야 합니다.)
-- Styled-Components를 설치합니다. `npm install styled-components` 
-  - (class로 조건부 스타일링을 하는 것 대신 styled-components를 사용)
 - Sass를 설치합니다. `npm install sass`
 - Swiper를 설치합니다. `npm install swiper`
 - 프로젝트 시작 `npm start`

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { headerNavList } from "../../constants/index";
-// import { useSelector } from "react-redux";
 import { scrollTop } from "../../utils/scrollEvents";
 
 const Header = () => {
