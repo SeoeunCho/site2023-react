@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+// setting
+
+@import "setting/fonts";
+@import "setting/reset";
+@import "setting/mixin";
+@import "setting/vars";
+
+// commons
+@import "common/common";
+
+// latout
+@import "layout/header";
+@import "layout/section";
+@import "layout/slider";
+@import "layout/artist";
+@import "layout/mv";
+@import "layout/playlist";
+@import "layout/unsplash";
+@import "layout/movie";
+@import "layout/tv";
+@import "layout/footer";

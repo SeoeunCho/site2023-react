@@ -1,0 +1,54 @@
+:root {
+  --mainEng-font: 'Montserrat';
+  --mainKor-font: 'nanumSquareNeo';
+  --mainNum-font: 'gmarket';
+
+  --main-color: #4857ec;
+  --sub-color: #4857ecc2;
+
+  --mainBg-color: #fff;
+  --subBg100: #f5f5f5;
+  --subBg200: rgb(234 233 246 / 80%);
+  --subBg300: #fff4f4;
+  --subBg400: #d3e8fb;
+  --subBg500: #e8f1f9;
+  --footerBg100: #252525;
+  --footerBg200: #1b1b1b;
+
+  --white: #fff;
+  --white100: #dddddd;
+  --white200: #cccccc;
+
+  --black: #222;
+  --black100: #2b2b2b;
+  --black200: #434343;
+  --black300: #686868;
+  --black400: #e0e0e0;
+  --black500: #888888;
+
+  --color1: #3f4849;
+  --color2: #493f46;
+  --color3: #2b3242;
+  --color4: #3b3232;
+  --color5: #2d3a40;
+
+  font-family: var(--mainEng-font), var(--mainKor-font);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  @media (max-width: 800px) {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+body {
+  background-color: var(--mainBg-color);
+}

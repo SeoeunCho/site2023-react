@@ -1,0 +1,120 @@
+/* 가운데 정렬 */
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 양쪽 정렬 */
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* 중앙 정렬 */
+@mixin position-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 상단 고정 */
+@mixin position-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* 한줄 효과 */
+@mixin line-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 두줄 효과 이상 */
+@mixin line($num) {
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+}
+
+/* 버튼 */
+@mixin button($bg-color, $text-color) {
+  display: inline-block;
+  padding: 0 30px;
+  height: 45px;
+  line-height: 45px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  @include border(50px);
+  background-color: $bg-color;
+  color: $text-color;
+  transition: background-color 0.3s;
+  font-weight: 600;
+
+  &:hover {
+    background-color: darken($bg-color, 7%);
+  }
+}
+
+@mixin more-button() {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 18px;
+  text-align: center;
+  color: #222;
+  font-weight: 600;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 6px;
+    background-image: url(/assets/img/icon/icon_view_circle.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+    border-radius: 18px;
+  }
+
+  &:hover {
+    font-weight: 700;
+  }
+}
+
+/* 보더 라운드 */
+@mixin border($radius) {
+  border-radius: ($radius);
+}
+
+/* 아이콘 */
+@mixin icon($bg-color, $icon-image) {
+  position: relative;
+  padding-top: 70px;
+  &::before {
+    content: '';
+    width: 60px;
+    height: 60px;
+    @include border(50%);
+    background-color: $bg-color;
+    background-image: $icon-image;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    transition: background-color 0.3s;
+  }
+  &:hover::before {
+    background-color: darken($bg-color, 10%);
+  }
+}

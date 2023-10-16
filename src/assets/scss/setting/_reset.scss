@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  //가로 확대 금지 - ios
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+div,
+dl,
+dd,
+dt,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+p,
+table,
+th,
+td,
+input,
+figure,
+figcaption,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+input,
+textarea,
+select,
+button,
+table {
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: Suit, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+li,
+ol,
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+em,
+address {
+  font-style: normal;
+}
+
+img,
+svg,
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  background-color: #dbdbdb;
+}
+
+img,
+fieldset,
+button {
+  border: 0;
+}
+
+button {
+  text-align: center;
+  color: var(--black);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input {
+  &:focus {
+    outline: 2px solid #000;
+  }
+}
