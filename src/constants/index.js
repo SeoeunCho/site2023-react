@@ -1,7 +1,7 @@
 export const headerNavList = [
   {
     title: "유튜브",
-    key: "youtube",
+    menu: "youtube",
     subMenu: [
       { title: "아티스트", url: "/artist" },
       { title: "뮤직비디오", url: "/mv" },
@@ -10,12 +10,12 @@ export const headerNavList = [
   },
   {
     title: "이미지",
-    key: "unsplash",
+    menu: "unsplash",
     subMenu: [{ title: "Unsplash", url: "/unsplash" }],
   },
   {
     title: "영화 & TV",
-    key: "movie",
+    menu: "movie",
     subMenu: [
       { title: "영화", url: "/movie" },
       { title: "TV 프로그램", url: "/tv" },

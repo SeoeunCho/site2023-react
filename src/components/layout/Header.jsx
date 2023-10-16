@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { headerNavList } from "../../constants/index";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
+import { scrollTop } from "../../utils/scrollEvents";
 
 const Header = () => {
   const [scrollActive, setScrollActive] = useState(false);
@@ -9,30 +10,46 @@ const Header = () => {
   const [depthMenu, setDepthMenu] = useState("");
   const [depthActive, setDepthActive] = useState(false);
 
-  const headerClass = useSelector((state) => state.headerClass);
-  const scrollTop = useSelector((state) => state.scrollTop);
-  console.log(headerClass, scrollTop);
+  const location = useLocation();
+  const headerClass = location.pathname !== "/" ? true : false;
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      if (window.scrollY > 0) {
+        setScrollActive(true);
+      } else {
+        setScrollActive(false);
+      }
+    });
+    scrollTop();
+  }, [location]);
+
+  useEffect(() => {
+    document.body.classList.toggle("scrollLock", allMenuActive);
+  }, [allMenuActive]);
+
+  useEffect(() => {
+    if (depthMenu !== "") {
+      setDepthActive(true);
+    }
+  }, [depthMenu]);
 
   const showSiteMap = () => {
-    if (!allMenuActive) {
-      setAllMenuActive(true);
-    } else {
-      setAllMenuActive(false);
-      // this.$store.commit("scrollTop");
-    }
+    setAllMenuActive((prevValue) => !prevValue);
   };
-  const showGnbDepth = (menu) => {
-    setDepthMenu(menu);
-    // setDepthActive((prevValue) => !prevValue);
+
+  const handleGnbClick = (nav) => {
+    setDepthMenu(nav.menu);
+    setDepthActive((prevValue) => !prevValue);
   };
 
   return (
     <>
       {/* S: header */}
-      <header id="header" role="banner" className={`${scrollActive ? "active" : ""}`}>
+      <header id="header" role="banner" className={`${scrollActive ? "active" : ""} + ${headerClass ? "router-active" : ""}`}>
         <div className="header-inner container clear">
           <h1 className="header-logo left">
-            <Link to="/">
+            <Link to="/" onClick={scrollTop}>
               Seoeun<em>React-Site</em>
             </Link>
           </h1>
@@ -40,11 +57,15 @@ const Header = () => {
             <ul className="clear">
               {headerNavList.map((nav, i) => (
                 <li className="depth01 left" key={i}>
-                  <a href="#!">{nav.title}</a>
+                  <a href="#" onClick={(e) => e.preventDefault()}>
+                    {nav.title}
+                  </a>
                   <ul className="depth02-list">
                     {nav.subMenu.map((item, i) => (
                       <li className="depth02" key={i}>
-                        <Link to={item.url}>{item.title}</Link>
+                        <Link to={item.url} onClick={scrollTop}>
+                          {item.title}
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -52,7 +73,7 @@ const Header = () => {
               ))}
             </ul>
           </nav>
-          <div className="header-right clear" onClick={() => showSiteMap}>
+          <div className="header-right clear" onClick={showSiteMap}>
             <button type="button" className="btn-allmenu">
               <span className="txt-hidden">전체보기</span>
             </button>
@@ -61,25 +82,27 @@ const Header = () => {
       </header>
       {/* E: header */}
       {/* S: site-map */}
-      <div id="site-map" className="allmenu">
+      <div id="site-map" className={`allmenu + ${allMenuActive ? "active" : ""}`}>
         <div className="header-inner container">
           <div className="menu-top">
-            <h1 className="header-logo left" onClick={() => showSiteMap}>
+            <h1 className="header-logo left" onClick={showSiteMap}>
               <Link to="/">
                 Seoeun<em>Vue-Site</em>
               </Link>
             </h1>
-            <button className="btn-close txt-hidden" onClick={() => showSiteMap}>
+            <button className="btn-close txt-hidden" onClick={showSiteMap}>
               닫기
             </button>
           </div>
           <ul className="allmenu-list">
             {headerNavList.map((nav, i) => (
-              <li onClick={() => showGnbDepth(nav.key)} key={i}>
-                <a href="{()=>false}">{nav.title}</a>
+              <li className={`${depthActive && depthMenu === nav.menu ? "open" : ""}`} onClick={() => handleGnbClick(nav)} key={i}>
+                <a href="#" onClick={(e) => e.preventDefault()}>
+                  {nav.title}
+                </a>
                 <ul className="gnb-depth">
                   {nav.subMenu.map((item, i) => (
-                    <li className="depth02" key={i} onClick={() => showSiteMap}>
+                    <li className="depth02" key={i} onClick={showSiteMap}>
                       <Link to={item.url}>{item.title}</Link>
                     </li>
                   ))}

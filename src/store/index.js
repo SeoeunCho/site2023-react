@@ -5,14 +5,6 @@ let headerClass = createSlice({
   initialState: false,
 });
 
-let scrollTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-}
-scrollTop();
-
 export default configureStore({
   reducer: {
     headerClass: headerClass.reducer,

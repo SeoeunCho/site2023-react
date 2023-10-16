@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import ScrollTop from "./components/layout/ScrollTop";
+import ScrollTopBtn from "./components/layout/ScrollTopBtn";
 
 import HomePage from "./components/pages/HomePage";
 import ArtistPage from "./components/pages/ArtistPage";
@@ -12,7 +12,13 @@ import UnsplashPage from "./components/pages/UnsplashPage";
 import MoviePage from "./components/pages/MoviePage";
 import TvPage from "./components/pages/TvPage";
 
+import { scrollTop } from "./utils/scrollEvents";
+
 const App = () => {
+  useEffect(() => {
+    scrollTop();
+  }, []);
+
   return (
     <BrowserRouter>
       <Header />
@@ -26,7 +32,7 @@ const App = () => {
         <Route path="/tv" element={<TvPage />} />
       </Routes>
       <Footer />
-      <ScrollTop />
+      <ScrollTopBtn />
     </BrowserRouter>
   );
 };
