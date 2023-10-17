@@ -29,10 +29,16 @@
 
     .tv-btn {
       div {
-        margin-bottom: 10px;
-
         &:last-child {
           margin-bottom: 0px;
+        }
+
+        @media (max-width: 500px) {
+          button {
+            &:nth-child(3n) {
+              margin-right: 0;
+            }
+          }
         }
       }
     }

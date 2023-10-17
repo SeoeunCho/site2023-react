@@ -456,3 +456,30 @@ body {
     }
   }
 }
+
+/* =======================================================
+    모바일 반응형
+========================================================*/
+
+@media (max-width: 500px) {
+  .section {
+    .artist-desc {
+      display: grid !important;
+      > div {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .container {
+    .artist-btn {
+      div {
+        button {
+          &:nth-child(3) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
