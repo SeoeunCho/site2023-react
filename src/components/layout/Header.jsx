@@ -35,6 +35,7 @@ const Header = () => {
 
   const showSiteMap = () => {
     setAllMenuActive((prevValue) => !prevValue);
+    if (!allMenuActive) setDepthActive(false)
   };
 
   const handleGnbClick = (nav) => {

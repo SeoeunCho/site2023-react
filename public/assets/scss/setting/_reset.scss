@@ -1,9 +1,3 @@
-:root {
-  --circle_blue: #4857ec;
-  --circle_red: #ff3344;
-  --circle_green: #00c183;
-}
-
 *,
 *::before,
 *::after {
@@ -96,6 +90,7 @@ img,
 svg,
 video {
   display: block;
+  width: 100%;
   height: auto;
   max-width: 100%;
   background-color: #dbdbdb;

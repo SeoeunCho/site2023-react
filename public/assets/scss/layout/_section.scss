@@ -1,6 +1,233 @@
 /* ================================================
     슬라이더
 =================================================== */
+#main-visual {
+  transition: all 0.3s;
+  .inner {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+    height: 835px;
+    background: var(--black);
+
+    .main-swiper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      .banners {
+        .banner-img {
+          position: absolute;
+          width: auto;
+          height: 100%;
+          overflow: hidden;
+
+          .pc {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .mobile {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .banner-text {
+          position: absolute;
+          top: 285px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          max-width: 1320px;
+          margin: 0 auto;
+          padding: 0 20px;
+
+          .sub-title {
+            color: var(--white);
+            font-size: 30px;
+            margin-bottom: 15px;
+          }
+
+          h3 {
+            display: flex;
+            font-size: 50px;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 55px;
+            margin-right: 10px;
+            color: white;
+
+            &.change-color {
+              color: #5e53ff;
+            }
+
+            p {
+              font-size: 50px;
+              margin-left: 11px;
+
+              &.youtube {
+                color: #ee2375;
+              }
+              &.unsplash {
+                color: #5bfafe;
+              }
+              &.movie {
+                color: #ff9f17;
+              }
+            }
+          }
+
+          .desc {
+            height: 130px;
+            font-size: 24px;
+            line-height: 1.4;
+            color: var(--white);
+          }
+
+          a {
+            display: inline-block;
+            padding: 10px 30px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #fff;
+            @include border(50px);
+
+            &:hover {
+              font-weight: bold;
+            }
+
+            &.more1 {
+              background-color: #ee2375;
+              border: 2px solid #ee2375;
+            }
+            &.more2 {
+              background-color: var(--main-color);
+              border: 2px solid var(--main-color);
+            }
+            &.more3 {
+              background-color: #ff9f17;
+              border: 2px solid #ff9f17;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =======================================================
+    슬라이더 반응형
+========================================================*/
+@media (max-width: 1420px) {
+  #main-visual {
+    .inner {
+      height: 640px;
+
+      .main-swiper {
+        .banners {
+          .banner-text {
+            top: 220px;
+            max-width: 978px;
+
+            .sub-title {
+              font-size: 20px;
+            }
+
+            h3 {
+              font-size: 45px;
+              margin-bottom: 45px;
+
+              p {
+                font-size: 45px;
+              }
+            }
+
+            .desc {
+              height: 100px;
+              font-size: 18px;
+            }
+
+            a {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  #main-visual {
+    .inner {
+      height: auto;
+      .main-swiper {
+        .banners {
+          .banner-img {
+            position: relative;
+
+            .pc {
+              display: none !important;
+            }
+
+            .mobile {
+              display: block !important;
+            }
+          }
+          .banner-text {
+            top: 25.9vw;
+
+            .sub-title {
+              font-size: 5vw;
+              margin-bottom: 2.5vw;
+            }
+
+            h3 {
+              display: grid;
+              font-size: 8.5vw;
+              margin-bottom: 2vw;
+
+              p {
+                font-size: 8.5vw;
+                margin-left: 0;
+              }
+            }
+
+            .desc {
+              width: 23em;
+              height: 24vw;
+              line-height: 1.4;
+              font-size: 4vw;
+              word-break: keep-all;
+
+              &.more2 {
+                height: 13vw;
+              }
+              &.more3 {
+                height: 19vw;
+              }
+            }
+
+            a {
+              font-size: 2.4vw;
+              padding: 1vw 3vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================================
+    컨트롤러 슬라이더
+=================================================== */
 .controller {
   position: absolute;
   width: 190px;
@@ -101,7 +328,7 @@
 }
 
 /* =======================================================
-    반응형
+   컨트롤러 반응형
 ========================================================*/
 @media (max-width: 1024px) {
   .controller {
@@ -127,113 +354,368 @@
     }
   }
 }
-#main-visual {
-  transition: all 0.3s;
-  .inner {
-    max-width: 100%;
-    overflow: hidden;
-    padding: 0;
-    height: 835px;
-    background: var(--black);
 
-    .main-swiper {
-      width: 100%;
-      height: 100%;
-      position: relative;
+/* ================================================
+    아티스트
+=================================================== */
+#artist {
+  &.section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: var(--subBg100);
 
-      .banners {
-        .banner-img {
-          position: absolute;
-          width: auto;
-          height: 100%;
-          overflow: hidden;
+    .artist-desc {
+      display: flex;
+      flex-wrap: wrap;
 
-          .pc {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
+      > div {
+        width: calc(50% - 20px);
+        margin-right: 40px;
+        margin-bottom: 40px;
+        padding: 30px 25px;
+        @include border(20px);
+        background-color: #fff;
+        box-sizing: border-box;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-          .mobile {
-            display: none;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
+        &:nth-child(2n) {
+          margin-right: 0;
         }
 
-        .banner-text {
-          position: absolute;
-          top: 285px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 100%;
-          max-width: 1320px;
-          margin: 0 auto;
-          padding: 0 20px;
+        h4 {
+          font-size: 24px;
+          font-weight: bold;
+          color: #222;
+          word-break: keep-all;
+          margin-bottom: 20px;
+        }
 
-          .sub-title {
-            color: var(--white);
-            font-size: 30px;
-            margin-bottom: 15px;
+        p {
+          color: var(--black100);
+        }
+      }
+    }
+  }
+}
+
+/* ================================================
+    뮤직비디오
+=================================================== */
+#mv {
+  &.section {
+    background-color: var(--subBg200);
+
+    .mv-inner {
+      .mv-btn {
+        margin-bottom: 30px;
+
+        ul {
+          display: flex;
+          justify-content: center;
+
+          li {
+            a {
+              @include border(50px);
+              display: inline-block;
+              padding: 10px 30px;
+              margin: 0 5px;
+              transition: all 0.3s;
+              color: var(--white);
+              background-color: #83a5f9;
+
+              &:hover {
+                background-color: #3617ce;
+                color: var(--white);
+              }
+            }
+          }
+        }
+      }
+      .mv-cont {
+        @include flex-between;
+
+        .mv-item {
+          width: 32.2222%;
+          height: auto;
+          margin-bottom: 30px;
+
+          .mv-main {
+            > a {
+              display: block;
+              width: 100%;
+              height: 100%;
+              position: relative;
+              top: 0;
+              left: 0;
+
+              img {
+                width: 100%;
+                height: 100%;
+                @include border(20px);
+                opacity: 0.9;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              }
+              .play-icon {
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: url(/assets/img/icon/play_video.png) no-repeat center;
+                background-size: 100%;
+                z-index: 1000;
+              }
+            }
           }
 
-          h3 {
+          .mv-info {
             display: flex;
-            font-size: 50px;
-            font-weight: 900;
-            text-transform: uppercase;
-            line-height: 1;
-            margin-bottom: 55px;
-            margin-right: 10px;
+            align-items: left;
+            margin-top: 10px;
 
-            p {
-              font-size: 50px;
+            .pic {
+              margin-right: 10px;
+              width: 50px;
+              height: 50px;
 
-              &.youtube {
-                color: var(--main-color);
+              img {
+                @include border(50%);
               }
-              &.unsplash {
-                color: #5bfafe;
+            }
+            .title {
+              width: calc(100% - 60px);
+              text-align: left;
+
+              p {
+                @include line-ellipsis;
+                font-size: 20px;
+                font-weight: 600;
+                color: #222;
+                word-break: keep-all;
               }
-              &.movie {
-                color: #ff9f17;
+              span {
+                display: block;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================================
+    플레이리스트
+=================================================== */
+#playlist {
+  &.section {
+    background-color: var(--subBg300);
+
+    .playlist-inner {
+      .playlist-btn {
+        margin-bottom: 30px;
+
+        ul {
+          display: flex;
+          justify-content: center;
+
+          li {
+            a {
+              @include border(50px);
+              display: inline-block;
+              padding: 10px 30px;
+              margin: 0 5px;
+              transition: all 0.3s;
+              color: var(--white);
+              background-color: #83a5f9;
+
+              &:hover {
+                background-color: #3617ce;
+                color: var(--white);
+              }
+            }
+          }
+        }
+      }
+      .playlist-cont {
+        @include flex-between;
+
+        .playlist-item {
+          width: 32.2222%;
+          height: auto;
+          margin-bottom: 30px;
+
+          .playlist-main {
+            > a {
+              display: block;
+              width: 100%;
+              height: 100%;
+              position: relative;
+              top: 0;
+              left: 0;
+
+              img {
+                width: 100%;
+                height: 100%;
+                @include border(20px);
+                opacity: 0.9;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              }
+              .play-icon {
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: url(/assets/img/icon/play_video.png) no-repeat center;
+                background-size: 100%;
+                z-index: 1000;
               }
             }
           }
 
-          .desc {
-            height: 130px;
-            font-size: 24px;
-            line-height: 1.4;
-            color: var(--white);
+          .playlist-info {
+            display: flex;
+            align-items: left;
+            margin-top: 10px;
+
+            .title {
+              width: 100%;
+              text-align: left;
+              p {
+                @include line-ellipsis;
+                font-size: 20px;
+                font-weight: 600;
+                color: #222;
+                word-break: keep-all;
+              }
+              span {
+                display: block;
+                font-size: 16px;
+              }
+            }
           }
 
-          a {
-            display: inline-block;
-            padding: 10px 30px;
-            cursor: pointer;
-            font-size: 20px;
-            color: #fff;
-            @include border(50px);
+          img {
+            @include border(20px);
+          }
+        }
+      }
+    }
+  }
+}
 
-            &:hover {
-              font-weight: bold;
-            }
+/* ================================================
+    언스플레쉬 & 영화 공통 슬라이더
+=================================================== */
+.section {
+  .slider {
+    .swiper-slide {
+      transition: all 0.3s;
+      transform: scale(1);
+      opacity: 0.5;
 
-            &.more1 {
-              background-color: #ee2375;
-              border: 2px solid #ee2375;
+      &.swiper-slide-active {
+        transform: scale(1.3);
+        z-index: 2;
+        opacity: 1;
+      }
+    }
+
+    .swiper-pagination {
+      .swiper-pagination-bullet {
+        background: #000 !important;
+      }
+    }
+  }
+}
+
+/* ================================================
+    언스플레쉬
+=================================================== */
+#unsplash {
+  &.section {
+    background-color: var(--subBg400);
+
+    .unsplash-inner {
+      .slider {
+        .swiper {
+          padding: 59px 0 100px;
+          margin-bottom: 10px;
+
+          .unsplash-item {
+            width: 100%;
+            height: auto;
+
+            img {
+              width: 100%;
+              height: 100%;
+              @include border(20px);
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
-            &.more2 {
-              background-color: var(--main-color);
-              border: 2px solid var(--main-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================================
+    언스플레쉬 반응형
+=================================================== */
+@media (max-width: 1024px) {
+  #unsplash {
+    &.section {
+      .unsplash-inner {
+        .slider {
+          .swiper {
+            padding: 0 0 50px 0;
+
+            .swiper-slide {
+              opacity: 1;
+
+              &.swiper-slide-active {
+                transform: scale(1);
+              }
+
+              .unsplash-item {
+                height: auto !important;
+              }
             }
-            &.more3 {
-              background-color: #ff9f17;
-              border: 2px solid #ff9f17;
-            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================================
+    영화
+=================================================== */
+#movie {
+  &.section {
+    background-color: var(--subBg500);
+
+    .movie-inner {
+      .swiper {
+        padding: 77px 0 125px;
+        margin-bottom: 10px;
+
+        .movie-item {
+          width: 100%;
+          height: auto;
+
+          img {
+            width: 100%;
+            height: 100%;
+            @include border(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           }
         }
       }
@@ -242,36 +724,15 @@
 }
 
 /* =======================================================
-    반응형
+    영화 반응형
 ========================================================*/
-@media (max-width: 1420px) {
-  #main-visual {
-    .inner {
-      height: 640px;
-
-      .main-swiper {
-        .banners {
-          .banner-text {
-            top: 220px;
-            max-width: 978px;
-
-            .sub-title {
-              font-size: 20px;
-            }
-
-            h3 {
-              font-size: 45px;
-              margin-bottom: 45px;
-            }
-
-            .desc {
-              height: 100px;
-              font-size: 18px;
-            }
-
-            a {
-              font-size: 16px;
-            }
+@media (max-width: 1320px) {
+  #movie {
+    &.section {
+      .movie-inner {
+        .swiper {
+          .movie-item {
+            height: 34.5vw !important;
           }
         }
       }
@@ -280,59 +741,28 @@
 }
 
 @media (max-width: 1024px) {
-  #main-visual {
-    .inner {
-      height: auto;
-      .main-swiper {
-        .banners {
-          .banner-img {
-            position: relative;
-
-            .pc {
-              display: none !important;
-            }
-
-            .mobile {
-              display: block !important;
-            }
+  #movie {
+    &.section {
+      .movie-inner {
+        .swiper {
+          .movie-item {
+            height: 45.5vw !important;
           }
-          .banner-text {
-            top: 25.9vw;
+        }
+      }
+    }
+  }
+}
 
-            .sub-title {
-              font-size: 5vw;
-              margin-bottom: 2.5vw;
-            }
+@media (max-width: 640px) {
+  #movie {
+    &.section {
+      .movie-inner {
+        .swiper {
+          padding: 52px 0 100px !important;
 
-            h3 {
-              display: grid;
-              font-size: 8.5vw;
-              margin-bottom: 2vw;
-
-              p {
-                margin-left: 0;
-              }
-            }
-
-            .desc {
-              width: 23em;
-              height: 24vw;
-              line-height: 1.4;
-              font-size: 4vw;
-              word-break: keep-all;
-
-              &.more2 {
-                height: 13vw;
-              }
-              &.more3 {
-                height: 19vw;
-              }
-            }
-
-            a {
-              font-size: 2vw;
-              padding: 1vw 3vw;
-            }
+          .movie-item {
+            height: 45.5vw !important;
           }
         }
       }
