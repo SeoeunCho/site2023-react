@@ -41,7 +41,7 @@ const Footer = () => {
             <h4>유튜브</h4>
             <ul>
               <li>
-                <Link to="/artist">장르별 아티스트 페이지</Link>
+                <Link to="/artist">아티스트 페이지</Link>
               </li>
               <li>
                 <Link to="/mv">뮤직비디오 페이지</Link>
