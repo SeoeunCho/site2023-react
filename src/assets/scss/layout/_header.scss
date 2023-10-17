@@ -447,7 +447,7 @@
                 font-weight: 600;
 
                 &:hover {
-                  color: #ee2375 !important;
+                  color: var(--main-color) !important;
                 }
               }
             }
@@ -458,7 +458,7 @@
 
             &.open {
               > a {
-                color: #ee2375 !important;
+                color: var(--main-color) !important;
 
                 &::after {
                   transform: rotate(180deg);
