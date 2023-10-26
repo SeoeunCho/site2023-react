@@ -24,7 +24,8 @@ const Header = () => {
   }, [location]);
 
   useEffect(() => {
-    document.body.classList.toggle("scrollLock", allMenuActive);
+    const htmlDom = document.getElementsByTagName( 'html' )[0]
+    htmlDom.classList.toggle("scrollLock", allMenuActive);
   }, [allMenuActive]);
 
   useEffect(() => {
