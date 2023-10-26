@@ -24,8 +24,7 @@ const Header = () => {
   }, [location]);
 
   useEffect(() => {
-    const htmlDom = document.getElementsByTagName( 'html' )[0]
-    htmlDom.classList.toggle("scrollLock", allMenuActive);
+    document.body.classList.toggle("scrollLock", allMenuActive);
   }, [allMenuActive]);
 
   useEffect(() => {
@@ -36,7 +35,7 @@ const Header = () => {
 
   const showSiteMap = () => {
     setAllMenuActive((prevValue) => !prevValue);
-    if (!allMenuActive) setDepthActive(false)
+    if (!allMenuActive) setDepthActive(false);
   };
 
   const handleGnbClick = (nav) => {

@@ -325,7 +325,10 @@ $interval: (
 }
 
 .scrollLock {
+  height: 100%;
+  min-height: 100%;
   overflow: hidden !important;
+  touch-action: none;
 }
 
 .top-btn {
@@ -347,10 +350,6 @@ $interval: (
   font-size: 13px;
   z-index: 1000;
   cursor: pointer;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 /* =======================================================
