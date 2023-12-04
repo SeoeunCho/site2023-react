@@ -1,11 +1,11 @@
 # React 사이트 프로젝트
 
-이 프로젝트는 여러 가지 API사용에 익숙해지는 과정을 담은 React 사이트입니다.
+이 프로젝트는 여러 가지 `API`사용에 익숙해지는 과정을 담은 `React`사이트입니다.<br/>
 Youtube, Unsplash, TMDB(The Movie Database) API를
-Postman사이트를 이용하여 데이터를 분류하고 그 중에서 원하는 데이터만 가져와 사용했습니다.
-유튜브 영상 / 이미지 / 영화 목록과 검색이 가능합니다.
-웹표준을 준수하며, Sass와 Media Query를 사용해 어떤 기기에도 대응하는 반응형으로 작업했습니다.
-Prettier, ESlint를 이용해 문법에 오류가 없도록 작업하며 코드정리를 하였습니다.
+`Postman`사이트를 이용하여 데이터를 분류하고 그 중에서 원하는 데이터만 가져와 사용했습니다.<br/>
+유튜브 영상 / 이미지 / 영화 목록과 검색이 가능합니다.<br/>
+웹표준을 준수하며, `Sass`와 `Media Query`를 사용해 어떤 기기에도 대응하는 반응형으로 작업했습니다.<br/>
+`Prettier`, `ESlint`를 이용해 문법에 오류가 없도록 작업하며 코드정리를 하였습니다.
 
 ![image](https://github.com/SeoeunCho/site2023-react/blob/main/src/assets/img/scrrenshot/site2023-react-screenshot.png)
 
